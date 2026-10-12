@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# TenantCompass
 
-## Project info
+**A property-management dashboard prototype — 2nd place at a hackathon**
 
-**URL**: https://lovable.dev/projects/2673b6bf-e6a4-4f97-a15f-d7320fafcb1d
+TenantCompass was built by our team for a hackathon, where we placed **second**. We used [Lovable](https://lovable.dev/) for rapid, AI-assisted prototyping and built an interactive interface for exploring how property managers could handle tenant communications, properties, events, and reporting in one place.
 
-## How can I edit this code?
+This repository contains the hackathon **frontend prototype**, now maintained as a standalone React application. It is a demonstration of the proposed user experience, **not a production property-management platform**.
 
-There are several ways of editing your application.
+## What you can explore
 
-**Use Lovable**
+- **Dashboard:** summary cards, recent tenant messages, property overview, and upcoming events.
+- **Properties:** cards showing sample property information, unit occupancy, maintenance status, and text search.
+- **Messages:** sample tenant messages with searchable text, status filters, priority labels, and message details.
+- **Calendar:** browse dates and see predefined maintenance, inspection, and meeting events.
+- **Reports:** charts displaying sample message activity, message categories, and response times.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2673b6bf-e6a4-4f97-a15f-d7320fafcb1d) and start prompting.
+### Prototype scope
 
-Changes made via Lovable will be committed automatically to this repo.
+**All properties, messages, events, and reported statistics are sample data defined in the frontend source code.** The interface does not connect to a backend or database. Features such as creating properties, sending tenant replies, exporting reports, and administering accounts are not implemented; some buttons and sections are visual placeholders. Labels such as “Auto-replied” illustrate the intended workflow, **not a working AI auto-reply integration**.
 
-**Use your preferred IDE**
+## Built with
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- React 18 and TypeScript
+- Vite 5
+- Tailwind CSS and shadcn/ui / Radix UI components
+- React Router
+- Recharts for reporting visualizations
+- Lucide icons
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Lovable was used to accelerate the original hackathon prototype. The source code can be developed and built locally without a Lovable account or hosted editor.
 
-Follow these steps:
+## Run locally
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+You need a recent Node.js version and npm.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/kessleraqu/tenant-compass-hub.git
+cd tenant-compass-hub
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the local URL printed by Vite (configured to use **http://localhost:8080/**).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To produce a static build:
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The build output is created in `dist/`. This is a client-side React application; a static host can serve the built assets. When deploying, configure single-page-app route fallbacks so URLs such as `/properties` and `/messages` work when opened directly.
 
-## What technologies are used for this project?
+Other available command:
 
-This project is built with:
+```bash
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Project structure
 
-## How can I deploy this project?
+```text
+src/pages/                 Dashboard, Properties, Messages, Calendar, Reports
+src/components/dashboard/  Dashboard widgets
+src/components/layout/     Navigation and application shell
+src/components/ui/         Shared interface components
+src/App.tsx                Routes and application setup
+index.html                 HTML entry point and metadata
+vite.config.ts             Development/build configuration
+```
 
-Simply open [Lovable](https://lovable.dev/projects/2673b6bf-e6a4-4f97-a15f-d7320fafcb1d) and click on Share -> Publish.
+## Hackathon background
 
-## Can I connect a custom domain to my Lovable project?
+TenantCompass began as a team hackathon prototype. **Our team placed second.** We used Lovable as an AI-assisted design and development tool to quickly explore and present the property-management concept. This README documents the implementation as it exists in the repository, without claiming features that were not built during the event.
 
-Yes it is!
+## Limitations and next steps
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project is preserved as a hackathon prototype. A production implementation would need a secure backend, authentication and authorization, data persistence, real communications integrations, proper handling of tenant information, and working management/reporting actions.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+No application license is included in this repository at present. Making the repository public allows people to inspect and clone its contents, but does not by itself grant broad rights to reuse or redistribute the code.
