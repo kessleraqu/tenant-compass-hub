@@ -14,6 +14,10 @@ This repository contains the hackathon **frontend prototype**, now maintained as
 - **Calendar:** browse dates and see predefined maintenance, inspection, and meeting events.
 - **Reports:** charts displaying sample message activity, message categories, and response times.
 
+## Dashboard Preview
+
+![TenantCompass Dashboard](docs/images/dashboard.png)
+
 ### Prototype scope
 
 **All properties, messages, events, and reported statistics are sample data defined in the frontend source code.** The interface does not connect to a backend or database. Features such as creating properties, sending tenant replies, exporting reports, and administering accounts are not implemented; some buttons and sections are visual placeholders. Labels such as “Auto-replied” illustrate the intended workflow, **not a working AI auto-reply integration**.
